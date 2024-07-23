@@ -4,3 +4,19 @@ What is Jenkins: Tool to quickly deploy cnhages to prod
 WHy Jenkins: 
 
 Jenkins is an integration tool. For packing nad building code
+
+Jenikins pipeline 
+
+Dev > Repository > Build > Test > Release/deployed > Proudction
+
+JENIKINS SETUP STEPS
+install java
+install java 1.8
+install maven
+
+download jenkisn from jekins io 
+
+install jav 11
+install jenkins
+
+
