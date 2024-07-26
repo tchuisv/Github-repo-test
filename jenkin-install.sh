@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #STEP-1: INSTALLING GIT JAVA-1.8.0 MAVEN
-sudo su 
+#sudo su 
 yum install git
 yum install java-1.8.0-openjdk
 #yum install maven
@@ -22,7 +22,7 @@ update-alternatives --config java
 #STEP-4: RESTARTING JENKINS (when we download service it will on stopped state)
 systemctl start jenkins.service
 systemctl status jenkins.service
-
+cat /var/lib/jenkins/secrets/initialAdminPassword
 
 
 # CONNECT:
@@ -37,3 +37,7 @@ systemctl status jenkins.service
 
 # WORKSPACE: where your job output is going to be stored
 # Default: /var/lib/jenkins/workspace
+
+#MAVEN STUFFS
+#mvn clean package
+#Building war: /var/lib/jenkins/workspace/first-prof/target/NETFLIX-1.2.2.war
