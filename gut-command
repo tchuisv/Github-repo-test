@@ -1,0 +1,8 @@
+Add remote repo via SHH
+generate ssh key 
+    ssh-keygen 
+Add the public key to github
+    git>setting> ssh> add ssh key
+set the reomte URL with SSH instead of HTTPS
+    git remote set-url origin git@github.com:username/repository.git
+The push the code
