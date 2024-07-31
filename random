@@ -1,2 +1,9 @@
 intellij install link
 https://www.jetbrains.com/idea/download/download-thanks.html?platform=windows&code=IIC 
+
+Steps for building a python project using intelliJ
+1. download pythin fron thepython wedsite and install on the laptop. Make sure you check the box "add python to path"
+2. Downlaod intellij from jetbrains website (community edition)
+3. plugin are configured IntelliJ for python
+4. setting the at the project level
+5. create a Sample python project
