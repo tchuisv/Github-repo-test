@@ -7,3 +7,9 @@ Steps for building a python project using intelliJ
 3. plugin are configured IntelliJ for python
 4. setting the at the project level
 5. create a Sample python project
+
+Downloadin java and create a project
+
+Download jave for the website
+confirm the java is install from CMD
+open a new java project from intellij and run the test project
