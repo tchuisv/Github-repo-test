@@ -23,3 +23,36 @@ install jenkins
 git repository for test git pulling : https://github.com/pradeepV2/project-for-jenkins 
 
 
+Jenkins pripeline
+
+Groovy script are written in jenkins pipeline project
+
+Use the PASSS acronym to write a groovy script (pipeline, agent, stages, stages, Steps )
+
+See multiple pipelien below groovy script below
+
+pipeline{
+    agent any
+    
+    stages{
+        stage ('one') {
+            steps {
+                sh 'touch file1.txt'
+            }
+        }
+         stage ('two') {
+            steps {
+                sh 'touch file2.txt'
+            }
+        }
+    }
+    
+    This cript creates two files saves the in the jenkins workspace directory"
+    /var/lib/jenkins/workspace
+    
+}
+
+
+
+
+
