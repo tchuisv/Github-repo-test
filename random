@@ -22,3 +22,14 @@ Class is like a blueprint
 
 
 
+COMMON MAVEN Commands
+
+Bateisa Gaynor
+8:47 PM
+Common Maven Commands
+	• mvn clean: Cleans the project by removing the target directory, which contains the compiled code.
+	• mvn compile: Compiles the source code of the project.
+	• mvn test: Runs the tests using a testing framework like JUnit.
+	• mvn package: Packages the compiled code into a distributable format, such as a JAR or WAR file.
+	• mvn install: Installs the packaged project into the local repository, making it available for other projects.
+	• mvn deploy: Deploys the project to a re

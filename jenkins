@@ -56,3 +56,48 @@ pipeline{
 
 
 
+Git pull code on groovy
+
+Might needs repor witha pom file
+
+jenkins credebtails
+username: admin
+password: 123
+
+
+
+
+
+pipeline{
+    agent any
+    
+    stages{
+        stage ('git link'){
+            steps {
+                
+                git branch: 'main',
+                    url: 'https://github.com/tchuisv/Github-repo-test.git'
+            }
+        }
+        stage ('maven build'){
+            steps {
+                sh 'mvn compile'
+            }
+        }
+        stage ('Maven test') {
+            steps {
+               sh 'mvn test' 
+            }
+        }
+        stage ('maven package') {
+            steps {
+                sh 'mvn clean package'
+            }
+        }
+        
+    }
+}
+
+
+
+
