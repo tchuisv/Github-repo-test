@@ -76,7 +76,7 @@ pipeline{
             steps {
                 
                 git branch: 'main',
-                    url: 'https://github.com/pradeepV2/project-for-jenkins.git'
+                    url: 'https://github.com/pradeepV2/project-for-jenkins.gitco'
             }
         }
         stage ('maven build'){

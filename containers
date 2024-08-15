@@ -1,10 +1,14 @@
-Containerization 
+Docker: Open source tool used to create containers
 
-Packaging app
-software dependencies
-envirinment related information
+Container: software/code user to package applications
 
+JAR File problem
+Using MAven we create JAR file (Application code) but not the environment
 
+Why do we need containers
+Scalable, fast and easy to manage, Portability
 
-steps to creating containers
-https://www.youtube.com/watch?v=C-bX86AgyiA
+Monolithic -> Multiple servuice running on a single server
+Micro service ->  Multiple service running on multiple services
+
+Containers can be used as servers
