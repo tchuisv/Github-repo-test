@@ -12,3 +12,35 @@ Monolithic -> Multiple servuice running on a single server
 Micro service ->  Multiple service running on multiple services
 
 Containers can be used as servers
+
+
+Docker Architecture
+
+CLIENT - Build Pull Run
+
+DOCKER HOST - Docker Daemon (container and image)
+
+REGISTRY  - House all docker images
+
+
+STEPS
+    1. create a container using an base image (ubuntu/amazonlinux/macos)
+        docker pull ubuntu (Pull image from docker hub)
+        docker run container-name (create container using the pulled image)
+
+    2. Install the required pacakages inside the container
+        install mvn
+        install git
+        install my-sql
+        install apache
+
+    3. Run the application inside the container
+        run the application
+
+    4. Create a project image using the container image (Backup)
+        docker commit container-name
+
+    5. Create another copy of the container-backup using the project-image
+
+Summary of commands
+
