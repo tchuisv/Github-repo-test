@@ -42,5 +42,25 @@ STEPS
 
     5. Create another copy of the container-backup using the project-image
 
-Summary of commands
+
+
+-install docker on ec2... yum install docker
+-Start docker ..systemctl start docker
+- You can check teh status after starting ..systemctl status docker
+-Pull the base image .....docker pull ubuntu
+- Create container ---docker run -it --name container1 ubuntu _. this gets you into the container
+update teh container --apt update
+    isnatl the package ---apt install git,apt install maven, apt install apache2, sudo apt install openjdk-11-jdk
+    -> apt update -y
+            -> apt install git -y
+            -> apt install maven -y
+            -> apt install openjdk-11-jdk
+            -> apt install apache2
+            -> apt install mysql-server
+            -> apt install python3
+
+docker start container id  >>> to start a containerker stop
+
+
+
 
