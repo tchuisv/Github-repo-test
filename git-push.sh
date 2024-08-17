@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "the git push for ((date))" 
+echo "the git push for $(date)" 
 sleep 2
 
 echo "the below changes were made"
