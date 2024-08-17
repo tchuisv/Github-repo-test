@@ -54,12 +54,27 @@ update teh container --apt update
     -> apt update -y
             -> apt install git -y
             -> apt install maven -y
-            -> apt install openjdk-11-jdk
-            -> apt install apache2
-            -> apt install mysql-server
-            -> apt install python3
+            -> apt install openjdk-11-jdk -y
+            -> apt install apache2 -y
+            -> apt install mysql-server -y
+            -> apt install python3 -y
 
 docker start container id  >>> to start a containerker stop
+
+
+Use  Ctrl PQ to step out of container
+
+Create a docker image with a container 
+-docker commit container2 project-image
+docker 
+
+REMOTE into a docker container : -docker exec -it container2 bash
+docker ps
+docker stop container2
+
+
+
+
 
 
 
