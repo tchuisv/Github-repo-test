@@ -1,7 +1,7 @@
-# command to run and pull image from docker hub
+
 
 #!/bin/bash
-sudo su
+
 mkdir dockdir
 cd dockdir
 yum install docker -y
