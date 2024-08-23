@@ -73,6 +73,11 @@ docker ps
 docker stop container2
 
 
+DOCKERFILE
+
+
+
+
 
 
 

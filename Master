@@ -1,0 +1,21 @@
+Master slave concept
+
+Master plan and schedule task and manages the slaves node
+
+Create 3 instance 1 master and 2 slaves
+
+configure jenkins on the 
+
+https://github.com/pradeepV2/Java-project.git
+
+mvn clean package
+
+STEPS
+
+Create a master node 
+-create 2 slaves nodes
+-install jenkins packages on the master node
+-create a free style Jenkins project and build the project
+-install java 11 on slave1 and slave2
+
+Establish the connection between master and slave2
