@@ -16,6 +16,12 @@ Create a master node
 -create 2 slaves nodes
 -install jenkins packages on the master node
 -create a free style Jenkins project and build the project
+-run a freestyle prject in jenkins with below 
+    https://github.com/pradeepV2/Java-project.git
+    mvn clean package
+
 -install java 11 on slave1 and slave2
 
 Establish the connection between master and slave2
+dashboard > manage jenkins > nodes > New node 
+choose the number of exceutors > /tmp for the renmote derectory
