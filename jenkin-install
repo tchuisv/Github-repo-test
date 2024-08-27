@@ -1,7 +1,9 @@
 #!/bin/bash
 
 #STEP-1: INSTALLING GIT JAVA-1.8.0 MAVEN
-#sudo su 
+#
+
+sudo su 
 yum install git
 yum install java-1.8.0-openjdk
 #yum install maven

@@ -75,6 +75,48 @@ docker stop container2
 
 DOCKERFILE
 
+Creating a sample WEB-server using the DOCKERFILE
+1. index.html > Create a webpage
+2. create a DOCKERFILE  
+    confg the dockerfile with tools to run the webserver
+3. Build docker image
+4. 
+
+
+FROM ubutu/amazonlinux
+RUN apt update -y
+RUN apt install git -y
+RUN apt install apache2 -y
+RUN apt install python3 -y
+RUN apt install mysql-server
+RUN apt install maven
+
+
+yum install docker
+2  mkdir project1
+3  cd project1/
+4  touch Dockerfile
+5  vi Dockerfile 
+6  ls
+7  systemctl start docker.service 
+8  systemctl status docker.service 
+9  docker images
+10  docker ps
+11  ll
+12  docker build -t image1 .
+13  docker images
+14  vi Dockerfile 
+15  docker build -t image1 .
+16  docker images
+17  docker run it --first image1
+18  docker run it --first ca0631572f5c
+19  docker run -it --container23 image1
+20  docker run -it container23 image1
+21  docker run -it --name container23 image1
+
+
+
+
 
 
 
