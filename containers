@@ -116,6 +116,24 @@ yum install docker
 
 
 
+Creating Docker image using Dockerfile
+
+we can use docker images for WEB APPS, NETFLIX APP, APP + DB, Mobile APP 
+
+Steps
+
+Create EC@ instance , install docker
+create a project directory
+pull a base image (web-ser >apache/ngnx)
+index.html  > the html code
+create docker file 
+Create the docker image and run image
+
+
+
+
+
+
 
 
 
