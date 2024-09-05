@@ -131,6 +131,18 @@ Create the docker image and run image
 
 
 
+Micro service project in docker  https://github.com/pradeepV2/MicroServicesProject
+
+Microservice project
+
+
+
+
+docker swarm init >>> creating a cluster and making the server a master 
+add --advertise-addr 18.221.11.7 to specify the server you wnat to use as master
+
+docker swarm join --token SWMTKN-1-5aaklafw39yq8ne7abynaa9pxm995b8c8w21frazxfo69cszua-bofbymmhqoydh3qhlq82djhs5 18.221.11.7:2377
+
 
 
 
