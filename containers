@@ -135,21 +135,103 @@ Micro service project in docker  https://github.com/pradeepV2/MicroServicesProje
 
 Microservice project
 
-
-
+CREATE 3 SERVER AND MAKE A SWARM OUT OF IT BY INSTALLING DOCKER ON ALL, OPEN PORT 2377 AND RUNNING THE BELOW DOCKER COMMANDS
 
 docker swarm init >>> creating a cluster and making the server a master 
 add --advertise-addr 18.221.11.7 to specify the server you wnat to use as master
 
+Port 2377 must be open for docker swarm
+
 docker swarm join --token SWMTKN-1-5aaklafw39yq8ne7abynaa9pxm995b8c8w21frazxfo69cszua-bofbymmhqoydh3qhlq82djhs5 18.221.11.7:2377
 
+To generate the join token
+
+docker swarm join-token --rotate worker  >>>Successfully rotated worker join token
+
+docker swarm join-token worker >>>>To add a worker to this swarm, run the following command:
+
+
+    STEPS:
+
+        STEP 1: -
+            Create 3 instances 
+            
+            STEP 2: -
+            Install Docker in all the 3 instances and Start the docker service
+            
+            STEP 3: -
+            Select any one EC2 and Initialize it as MASTER node using DOCKER SWARM
+            
+            
+            STEP 4: -
+            Add the other two EC2 instances as SLAVE NODES in the CLUSTER using Docker Swarm
+            
+            
+            STEP 5: -
+            Install JENKINS and the other required packages on the MASTER NODE
+            STEP 6: -
+            TRIVY INSTALLATION is for scanning the code before we upload the image to docker hub
+            
+            
+            STEP 7: -
+            Create a Dockerfile and write the STEPS for downloading base images
+            
+            
+            STEP 8: -
+            Create an index.html file
+            
+            STEP 9: -
+            Manually create images for different services and upload them to DOCKERHUB
+            
+            a) Create image for movies service -> docker build -t movies:v1 .
+            
+            b) Create image for DTH service -> docker build -t dth:v1 .
 
 
 
 
-
-
-
+Commands
+1  systemctl start docker
+2  docker node ls
+3  docker swarm join-token worker
+4  docker node ls
+5  docker node ls
+6  GIT --VERSION
+7  LS
+8  ls
+9  yum install git java-1.8.0-openjdk maven -y
+10  sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+11  sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
+12  amazon-linux-extras install java-openjdk11 -y
+13  yum install jenkins -y
+14  update-alternatives --config java
+15  systemctl start jenkins.service
+16  systemctl status jenkins.service
+17  wget https://github.com/aquasecurity/trivy/releases/download/v0.18.3/trivy_0.18.3_Linux-64bit.tar.gz
+18  tar zxvf trivy_0.18.3_Linux-64bit.tar.gz
+19  sudo mv trivy /usr/local/bin/
+20  vim .bashrc
+21  source .bashrc 
+22  vi DOckerfile
+23  vi Dockerfile
+24  ls
+25  rm DOckerfile 
+26  ls
+27  vi index.html
+28  ll
+29  docker build -t movies:v1 .
+30  docker images
+31  docker run -itd --name cont1 -p 81:80 movies:v1
+32  histoty
+33  history
+34  docker ps -a
+35  docker build -t dth:v1 .
+36  docker images
+37  docker run -itd --name cont2 -p 81:80 dth:v1
+38  docker run -itd --name cont2 -p 82:80 dth:v1
+39  docker run -itd --name cont3 -p 82:80 dth:v1
+40  docker ps -a
+41  history
 
 
 
