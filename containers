@@ -187,7 +187,13 @@ docker swarm join-token worker >>>>To add a worker to this swarm, run the follow
             
             b) Create image for DTH service -> docker build -t dth:v1 .
 
+    Continue with deploying docker conatiner to the DOCKERHUB
 
+    voltairejojo
+    
+    docker login --username voltairejojo --password Started@123  ... Login to docker
+    docker tag jojopay:v1 voltairejojo/jojopay    ...Tag the image with yoru docker username
+    docker push voltairejojo/jojopay    .... push the tagged image 
 
 
 Commands
@@ -232,6 +238,46 @@ Commands
 39  docker run -itd --name cont3 -p 82:80 dth:v1
 40  docker ps -a
 41  history
+41  history
+   42  shutdown -h now
+   43  systemctl start docker
+   44  docker node ls
+45  docker images
+46  docker ps 
+47  docker ps -a
+48  docker start a6f116fc60a7
+49  docker ps
+50  docker start a52f430454f2 
+51  docker ps
+52  docker ps
+53  docker remove 3e23b70869da
+54  docker ps -a
+55  docker login
+56  docker login
+57  ls
+58  docker login --username voltairejojo
+59  docker login --username voltairejojo --password Started@123
+60  docker login --username voltairejojo --password-stdin Started@123
+61  docker images
+62  docker ps
+63  ls
+64  vi index.html 
+65  docker run -itd --name conta1 -p 83:80 jojpay:v1 
+66  docker build -t jojopay:v1
+67  docker build -t jojopay:v1 .
+68  docker run -itd --name conta1 -p 83:80 jojopay:v1 
+69  docker ps
+70  docker images
+71  docker tag jojopay:v1 voltairejojo/jojopay
+72  docker images
+73  docker push voltairejojo/jojopay
+74  docker tag movies:v1 voltairejojo/movies
+75  docker push voltairejojo/movies
+76  history
+
+
+
+
 
 
 
