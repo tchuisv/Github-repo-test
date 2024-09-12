@@ -66,3 +66,67 @@ Control Plane or Master Node
 -> API server: Decides on which Worker node the PODS should
 -> Scheduler : It will schedule the PODS creation
 -> ETCD : Entire cluster information is stored in Key-value pair format
+
+
+KOP: Kubernetes opertions used for creating clusters on the cloud
+
+KubeCTL: usered ot configuration of the cluster, pODS, tbshoot and service
+
+Minikube:
+used for local kubernetes cluster creation. Single node clusters
+
+
+
+Pradeep Kumar
+9:04 PM
+What is KOPS ?
+Kubernetes Operations.
+-> It is a 3rd party tool
+-> Creation of Kubernetes clusters on CLOUD
+
+What is MINIKUBE ?
+-> Used for local Kubernetes cluster creation 
+-> Single node clusters on your local machine
+-> Only one EC2 instance or you can install on your LAPTOP
+
+What is KubeCTL ?
+-> It is used for Configuration of the CLusters
+-> We can create PODS, services, troubleshoot
+FIRST APPROACH : -
+-> Create an EC2 instance and install Kubernetes on EC2 using any of the above tools
+-> IF something goes wrong, AMAZON will not provide the support for Kubernetes
+-> This is Cost efficient
+-> Timelines are not stringent/short for fixing the error
+
+LINUX DISRIBUTIONS: -
+Amazon Linux Distributions
+Redhat
+CentOS
+SECOND APPROACH is KUBENERNETES DISTRIBUTIONS: -
+Kubernetes is an OPENSOURCE TOOL: -
+-> EKS (Elastic Kubernetes Ser
+-> RANCHER 
+-> Timelines are stringent/short forvice) -> AWS will provide the servers/machines with already installing Kubernetes
+-> AKS (Azure Kubernetes Service)
+-> Openshift
+-> Tanzu fixing the error
+-> IN DOcker, we have CONTAINERS as the Lowest level deployment
+-> In K8s, we have PODS as lowest level of deployment
+
+-> One or more containers make a POD
+-> We have YAML file in k8s, for creating PODS 
+
+POD.yml
+-> Your containername
+-> Your image name
+-> Your image port number
+-> Base image details
+
+
+-------------------------------------------------------------------------------------------------------------
+
+Create a POD using 2 containers 
+
+-> Shared networking
+-> shared storage
+
