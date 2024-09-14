@@ -168,7 +168,7 @@ STEP - 9 : Request the URL using curl to check it's working or not.
   curl <URL>
 
   STEP -10 :  Forward the traffic from 3000 port to 80 port on our pod.
-  
+  kubectl port-forward svc/todolistapp-service 3000:80 --address 0.0.0.0 &
   
   
    Add port 3000 in security groups if you face any error
@@ -198,11 +198,78 @@ root@ip-172-31-21-85:/home/ubuntu# history
 
     1  minikube status
     2  docker ps
+
     3  kubectl run todolistapp --image=kubekode/react-todo-list-app
     4  kubectl expose pod todolistapp --type=NodePort --port=80 --name=todolistapp-service
     5  minikube service todolistapp-service --url
+      kubectl get service
+      kubectl get pods
     6  kubectl port-forward svc/todolistapp-service 3000:80 --address 0.0.0.0 &
     7  docker ps
     8  docker images
     9  history
 
+
+
+    Autoscaling
+
+    AUTO SCALING: -
+
+Bateisa Gaynor
+9:07 PM
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: my-app-hpa
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: my-app
+  minReplicas: 3
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 50
+PRADEEP
+9:11 PM
+AUTO SCALING: -
+
+What is Auto-scaling?
+Increasing or Decreasing the number of PODS or Nodes
+
+
+-> Horizontal POD Auto scaling (HPA)
+We increase or decrease the number of PODS
+
+-> Vertical POD Auto scaling (VPA)
+Increase the resources like memory or CPU or storage
+
+-> Cluster Autoscaling (CA)
+Increase the nodes/servers
+----------------------------------CONTAINER & POD & DEPLOYMENT----------------------------------
+
+CONTAINER : -
+WE use docker images for running the Containers
+
+PODS: -
+-> We create PODS using containers
+-> One or more containers make a POD
+-> Image name, container name, port number
+
+DEPLOYMENT:-
+-> It manages or handles PODS or complete lifecycle
+-> we should deploy our applications in PROD as deployment
+-> Image details, port number, POD details, Load balancer details, Auto scaling details, M
+----------------------------------- HORIZONTAL POD AUTO SCALING ---------------------------------------------
+
+What is the minimum number of REPLICAS or PODS that are required in HPA ?
+Minimum PODS or Replicas -> 1 or more
+
+What is the maximum number of REPLICAS or PODS that are required in HPA ?
+Maximum PODS or REPLICAS -> 
+
+-> Current or Actual PODS that are running 
+-> What is the current resource usage in percentage of the server (Memory, CPU, storage)
+-> what is the target limit that we ha
+Desired no. of REPLICAS = Actual PODS * (Current % of usage/Target limit of Usage)
+
+Desired no. of REPLICAS = 3 * ( 90 / 70 % )
