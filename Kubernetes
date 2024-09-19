@@ -273,3 +273,41 @@ Maximum PODS or REPLICAS ->
 Desired no. of REPLICAS = Actual PODS * (Current % of usage/Target limit of Usage)
 
 Desired no. of REPLICAS = 3 * ( 90 / 70 % )
+
+
+
+https://github.com/pradeepV2/Autoscaling-project
+Bateisa Gaynor
+8:37 PM
+To determine the number of replicas based on load, you can perform the following calculation:
+
+Number of Replicas
+=
+Total Expected Load (requests/second)
+Max Requests/Replica
+Number of Replicas= 
+Max Requests/Replica
+Total Expected Load (requests/second)
+​
+ 
+Steps:
+Estimate the total expected load (e.g., requests per second or transactions).
+Measure how many requests or tasks a single pod can handle efficiently (without exhausting CPU, memory, etc.).
+Divide the total load by the capacity of a single pod to determine the number of replicas needed.
+Bateisa Gaynor
+8:51 PM
+LoadBalancer:
+Use Case: When you want to expose your application externally in cloud environments (AWS, GCP, Azure) with automatic load balancing.
+Description: The service provisions an external LoadBalancer in cloud environments. The LoadBalancer routes traffic from outside the cluster to the service, which then directs traffic to the Pods.
+Benefit: It hides direct access to the Pods, provides high availability, and manages external traffic routing automatically.
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: my-app
+  ports:
+    - port: 80
+      targetPort: 8080
