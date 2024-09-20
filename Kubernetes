@@ -311,3 +311,93 @@ spec:
   ports:
     - port: 80
       targetPort: 8080
+
+
+
+      Running cluster with yml file
+
+          1  minikube start --driver=docker
+    2  sudo apt install git
+    3  git clone https://github.com/tchuisv/Autoscaling-project.git
+    4  ls
+    5  cd Autoscaling-project/
+    6  ls
+    7  cd HPA/
+    8  ls
+    9  kubectl get pods
+   10  kubectl apply -f 01_Deployment.yml 
+   11  kubectl get pods
+   12  kubectl describe pod hpa-demo-deployment-9cc6d54b5-xd6x6
+   13  kubectl get service
+   14  kubectl get pods
+   15  kubectl service
+   16  kubectl get service
+   17  kubectl expose pod hpa-demo-deployment-9cc6d54b5-xd6x6 --type=NodePort --port=80 --name autoscaleservice
+   18  kubectl get service
+   19  minikube service autoscaleservice --url
+   20  kubectl port-forward svc/autoscaleservice 3000:80 --address 0.0.0.0 &
+   21  kubectl get pods
+   22  kubectl get service
+   23  history
+
+
+
+https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/
+
+STEP 3: - Create the Cluster using minikube
+-> minikube start --nodes 2 -p multinode-cluster
+Pradeep
+8:33 PM
+Refer the minikube documentation if required.
+https://minikube.sigs.k8s.io/docs/tutorials/multi_node/kubec
+
+
+https://minikube.sigs.k8s.io/docs/tutorials/multi_node/
+
+
+Pradeep
+8:33 PM
+Refer the minikube documentation if required.
+https://minikube.sigs.k8s.io/docs/tutorials/multi_node/
+Pradeep
+8:38 PM
+METRICS SERVER Installation: -
+kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/download/v0.7.2/components.yaml
+Pradeep
+9:02 PM
+STEP 7 : - Verify the created services
+kubectl get all
+
+Wait for the HPA to kickin 
+
+Check the created items
+kubectl get all
+STEP 8 : Increase the LOAD on POD using load generator
+kubectl run -i --tty load-generator --rm --image=busybox:1.28 --restart=Never -- /bin/sh -c "while sleep 0.01; do wget -q -O- http://php-apache; done"
+
+Check HPA: -
+kubectl get hpa
+
+Check Replica sets: -
+kubectl get rs
+
+Check pods: -
+kubectl get pods
+
+Check HPA: -
+kubectl get hpa
+
+Check all: -
+kubectl get all
+
+STOP the load on terminal where load is runnin
+CTRL + C + exit
+Pradeep
+9:03 PM
+https://minikube.sigs.k8s.io/docs/tutorials/multi_node/
+
+
+
+This it test git working
+
+
