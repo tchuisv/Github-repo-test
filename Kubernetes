@@ -398,6 +398,27 @@ https://minikube.sigs.k8s.io/docs/tutorials/multi_node/
 
 
 
-This it test git working
+Helm installation
+
+ https://helm.sh/docs/intro/install/  
+
+
+STEPS for HELM Project: -
+
+1. Update the Ubuntu machine and switch to the root user
+-> sudo apt update
+-> sudo su
+
+2. Install Helm on your Ubuntu machine
+-> curl https://baltocdn.com/helm/signing.asc | gpg --dearmor | sudo tee /usr/share/keyrings/helm.gpg > /dev/null
+-> sudo apt-get install apt-transport-https --yes
+-> echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/helm.gpg] https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list
+-> sudo apt-get update
+-> sudo apt-get install helm
+
+
+3. Create the HELM Application
+-> helm create webapp1
+
 
 
