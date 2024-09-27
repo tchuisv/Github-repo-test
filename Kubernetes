@@ -421,4 +421,50 @@ STEPS for HELM Project: -
 -> helm create webapp1
 
 
+STEPS for HELM Project: -
+
+1. Update the Ubuntu machine and switch to the root user
+-> sudo apt update
+-> sudo su
+2. Install Minikube
+-> sudo apt-get install docker.io -y
+-> docker --version
+Pradeep Kumar
+8:11 PM
+-> curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl && chmod +x ./kubectl && sudo mv ./kubectl /usr/local/bin/kubectl
+-> curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 && chmod +x minikube && sudo mv minikube /usr/local/bin/
+Pradeep Kumar
+8:12 PM
+-> sudo usermod -aG docker $USER && newgrp docker
+Pradeep Kumar
+8:14 PM
+-> minikube start --driver=docker
+Pradeep Kumar
+8:15 PM
+3. Install Helm on your Ubuntu machine
+-> curl https://baltocdn.com/helm/signing.asc | gpg --dearmor | sudo tee /usr/share/keyrings/helm.gpg > /dev/null
+-> sudo apt-get install apt-transport-https --yes
+-> echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/helm.gpg] https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list
+-> sudo apt-get update
+-> sudo apt-get install helm
+Pradeep Kumar
+8:18 PM
+3. Create the HELM Application
+-> helm create webapp1
+Pradeep Kumar
+8:20 PM
+4. Delete the existing files from templates folder
+-> rm *
+-> cd tests
+-> rm *
+-> cd ..
+-> rmdir tests
+Pradeep Kumar
+8:26 PM
+5. Add the customized code into the templates folder with hard-coded values from GitHub (https://github.com/pradeepV2/Helm-project/tree/main/templates-original)
+Pradeep Kumar
+8:36 PM
+-> helm uninstall mywebapp-release
+
+
 
