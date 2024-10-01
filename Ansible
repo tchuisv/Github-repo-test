@@ -1,0 +1,54 @@
+Ansible i a configuration management
+
+configuring a control server with worker nodes
+
+create 3 server and make one of them control
+on the control node edit tenable password authenthication under the sshd_config file within the ssh directory
+
+https://docs.ansible.com/ansible/latest/ 
+
+STEPS for the Configuration of CONTROL and WORKER NODES
+
+1. Create 3 EC2 Instances
+-> Make one as Control node and other two servers as worker-1 and worker-2
+
+2. Login to the COntrol node and make the changes in sshd_config
+-> cd /etc/ssh
+-> ll
+-> vi sshd_config
+# PasswordAuthentication yes (Enable)
+
+3. Restart the sshd
+-> systemctl restart sshd
+-> systemctl status sshd
+4. Install ANSIBLE on the CONTROL NODE
+-> amazon-linux-extras install ansible2 -y
+Pradeep Kumar
+8:56 PM
+https://docs.ansible.com/ansible/latest/
+Pradeep Kumar
+9:04 PM
+4. Install ANSIBLE and Python-pip on the CONTROL NODE
+-> amazon-linux-extras install ansible2 -y
+-> yum install python python-pip python-dlevel -y
+
+5. Add the IP address of the Worker-nodes in the Ansible-hosts file which is present on Control Node
+-> cd /etc/ansible
+-> ll
+-> vi hosts
+# ADD the IP addresses of both the Worker-nodes
+
+6. Two Approaches for installing packages/running services
+
+a) Install softwares/packages using ADHOC Commands (manually)
+b) Install softwares/packages using ANSIBLE
+
+ADHOD :-
+ADHOC
+-> ansible all -a "yum install git"
+
+-> ansible all -a "yum install maven"
+
+-> ansible all -a "yum install docker"
+
+-> anisble all -a "systemctl start docker"
