@@ -52,3 +52,81 @@ ADHOC
 -> ansible all -a "yum install docker"
 
 -> anisble all -a "systemctl start docker"
+
+
+
+
+STEPS FOR INSTALLING ANSIBLE: -
+
+1. Create 3 Instances on AWS - LINUX
+
+2. Create a Project ID on Control Node
+-> useradd thinkly
+-> passwd thinkly
+# Entered the password
+
+3. Add the USERADD inside the sudoers file
+-> cd /etc/
+-> vi sudoers
+-> thinkly  ALL=(ALL)  NOPASSWD: ALL
+
+4. Enable Password Authentication in the sshd_config file
+-> Enabled Password Authentication
+-> Enabled PermitRootLogin #
+Restart the sshd
+-> systemctl restart sshd
+5. Create the users on slave nodes1 and node2,
+-> add the users on sudoers file 
+-> enable password authentication @
+
+
+6. Generate the key on the COntrol Node
+-> ssh-keygen
+-> cd /home/thinkly/.ssh/
+ 
+
+7. We copied the key and did SSH to the Slave-node1 and slave-node2
+-> ssh-copy-id thinkly@172.31.37.98
+-> ssh 'thinkly@172.31.37.98'
+
+8. Install the ANSIBLE & PYTHON-PIP on CONTROL NODE 
+-> sudo amazon-linux-extras install ansible2 -y
+-> sudo yum install python-pip
+-> ansible --version
+9. Add the IP ADDRESS of SLAVE-1 and SLAVE-2 in the hosts file of ANSIBLE
+-> cd /etc/ansible
+-> sudo chown -R thinkly:thinkly *
+-> vi hosts
+Add the IP ADDRESS of slave-1 and slave-2 
+
+10. Ping the slave servers and test the connection using ANSIBLE ping
+-> ansible all -m ping
+-> vi ansible.cfg
+interpreter_python      = /usr/bin/python
+inventory      = /etc/ansible/hosts
+-> ansible all -m ping
+
+11. Two Approaches for installing on Worker-nodes
+Pradeep Kumar
+9:12 PM
+-> ansible all -a yum install git -y
+b) Ansible Playbook
+
+12. Install on slave nodes adhoc method 
+-> ansible all -a "yum install -y git" --become
+-> ansible all -i hosts -m copy -a 'src=file123.txt dest=/home/thinkly
+
+
+13. Playbook method in ANSIBLE
+-hosts: all
+-task :
+	-name : Installation of GIT on the server
+	yum : name=git state=present
+
+
+	-name : Installation of Maven on the server
+	yum : name=maven state=present
+
+	-name : Installation of APACHE on the server
+	yum : name=httpd state=start
+
