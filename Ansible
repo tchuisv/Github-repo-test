@@ -128,5 +128,5 @@ b) Ansible Playbook
 	yum : name=maven state=present
 
 	-name : Installation of APACHE on the server
-	yum : name=httpd state=start
+	yum : name=httpd state=start 
 
