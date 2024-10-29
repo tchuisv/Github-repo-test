@@ -105,3 +105,4 @@ STEP-2 : Install Docker
        19  helm search repo grafana
        20  helm install grafana grafana/grafana
 
+cd/
